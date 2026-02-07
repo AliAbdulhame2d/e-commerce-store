@@ -78,3 +78,7 @@ Neue Funktionen werden regelmäßig hinzugefügt.
 
 ---
 
+##  Author
+Ali Abdulhameed / Feb.2026
+
+---
