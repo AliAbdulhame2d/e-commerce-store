@@ -1,10 +1,10 @@
-# e-commerce-store
- Laravel v.11 E-Commerce Store
+
+#  Laravel v.11 E-Commerce Store
+
 
 ##  Projektübersicht
 Dieses Projekt ist eine webbasierte E-Commerce-Anwendung 
 
-#  Laravel 11 E-Commerce Projekt
 
 ##  Projektbeschreibung
 Dieses Projekt ist eine moderne **E-Commerce Webanwendung**, die mit **Laravel 11** entwickelt wird.
