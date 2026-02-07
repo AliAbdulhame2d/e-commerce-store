@@ -18,5 +18,6 @@ Route::middleware([
     })->name('dashboard');
 });
 
+//@aab Code (1.'/redirect' ist direction, 2.'redirect' ist Funktion in Controller 'HomeController')
 Route::get('/redirect', [HomeController::class,'redirect']);
 
