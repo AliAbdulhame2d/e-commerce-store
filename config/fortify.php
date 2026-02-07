@@ -2,6 +2,7 @@
 
 use Laravel\Fortify\Features;
 
+
 return [
 
     /*
@@ -72,8 +73,8 @@ return [
     | and the user is authenticated. You are free to change this value.
     |
     */
-
-    'home' => '/dashboard',
+     //@aab Code (replaced dashboard to redirect)
+    'home' => '/redirect',
 
     /*
     |--------------------------------------------------------------------------
