@@ -15,6 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('name');
             $table->string('email')->unique();
+            //@aab Code (hinzufügen 'user_type', 'phone','address')
             $table->string('user_type')->default(0);
             $table->string('phone')->nullable();
             $table->string('address')->nullable();

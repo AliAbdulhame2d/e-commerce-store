@@ -1,11 +1,11 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-//@aab Code (hinzufügte diese Library)
+//@aab Code (redirect Admin und normaler User jede in seinen Page)
 use App\Http\Controllers\HomeController;
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('home.master');
 });
 
 Route::middleware([
@@ -18,6 +18,6 @@ Route::middleware([
     })->name('dashboard');
 });
 
-//@aab Code (1.'/redirect' ist direction, 2.'redirect' ist Funktion in Controller 'HomeController')
+//@aab Code (redirect Admin und normaler User jede in seinen Page )
 Route::get('/redirect', [HomeController::class,'redirect']);
 

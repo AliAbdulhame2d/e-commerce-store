@@ -74,6 +74,7 @@ return [
     |
     */
      //@aab Code (replaced dashboard to redirect)
+     //@aab Code (redirect Admin und normaler User jede in seinen Page)
     'home' => '/redirect',
 
     /*
