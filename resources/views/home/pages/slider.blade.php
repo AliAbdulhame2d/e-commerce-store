@@ -1,3 +1,4 @@
+<div class="hero_area">
 
 <section class="slider_section ">
     <div class="slider_bg_box">
@@ -91,3 +92,4 @@
     </div>
  </section>
  
+</div>

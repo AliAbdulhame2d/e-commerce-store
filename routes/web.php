@@ -5,7 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 
 Route::get('/', function () {
-    return view('home.master');
+    return view('home.index');
 });
 
 Route::middleware([
@@ -20,4 +20,3 @@ Route::middleware([
 
 //@aab Code (redirect Admin und normaler User jede in seinen Page )
 Route::get('/redirect', [HomeController::class,'redirect']);
-
