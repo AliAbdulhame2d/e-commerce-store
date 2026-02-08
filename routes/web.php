@@ -1,8 +1,10 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-//@aab Code (redirect Admin und normaler User jede in seinen Page)
+
+//@aab
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\AdminController;
 
 Route::get('/', function () {
     return view('home.index');
@@ -18,5 +20,7 @@ Route::middleware([
     })->name('dashboard');
 });
 
-//@aab Code (redirect Admin und normaler User jede in seinen Page )
+// redirect Admin und normaler User jede in seinem Page (@aab)
 Route::get('/redirect', [HomeController::class,'redirect']);
+// @aab
+Route::post('/add_catagory', [AdminController::class,'add_catagory']);
