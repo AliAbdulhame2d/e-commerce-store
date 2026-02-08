@@ -119,7 +119,10 @@
                     
                         @auth
                         <li class="nav-item">
-                           <a class="btn btn-primary mr-1 mb-1" href="{{ route('login') }}">Logout</a> 
+                           <form method="POST" action="{{route('logout')}}">
+                           @csrf
+                           <button class="btn btn-primary mr-1 mb-1" type="submit">Logout</button> 
+                           </form>
                         </li>
                      
                         @else
