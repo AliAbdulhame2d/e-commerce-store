@@ -7,7 +7,7 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\AdminController;
 
 Route::get('/', function () {
-    return view('home.index');
+    return view('main.index');
 });
 
 Route::middleware([

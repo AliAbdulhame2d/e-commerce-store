@@ -1,4 +1,4 @@
-@extends('home.master')
+@extends('main.master')
 
 @section('content')
 

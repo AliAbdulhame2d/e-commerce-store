@@ -10,16 +10,16 @@
       <meta name="keywords" content="" />
       <meta name="description" content="" />
       <meta name="author" content="" />
-      <link rel="shortcut icon" href="src/images/favicon.png" type="">
+      <link rel="shortcut icon" href="frontend/images/favicon.png" type="">
       <title>Famms - Fashion HTML Template</title>
       <!-- bootstrap core css -->
-      <link rel="stylesheet" type="text/css" href="src/css/bootstrap.css" />
+      <link rel="stylesheet" type="text/css" href="frontend/css/bootstrap.css" />
       <!-- font awesome style -->
-      <link href="src/css/font-awesome.min.css" rel="stylesheet" />
+      <link href="frontend/css/font-awesome.min.css" rel="stylesheet" />
       <!-- Custom styles for this template -->
-      <link href="src/css/style.css" rel="stylesheet" />
+      <link href="frontend/css/style.css" rel="stylesheet" />
       <!-- responsive style -->
-      <link href="src/css/responsive.css" rel="stylesheet" />
+      <link href="frontend/css/responsive.css" rel="stylesheet" />
    </head>
    <body>
 
@@ -27,14 +27,14 @@
       <header class="header_section">
          <div class="container">
             <nav class="navbar navbar-expand-lg custom_nav-container ">
-               <a class="navbar-brand" href="index.html"><img width="250" src="src/images/logo.png" alt="#" /></a>
+               <a class="navbar-brand" href=""><img width="250" src="frontend/images/logo.png" alt="#" /></a>
                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                <span class=""> </span>
                </button>
                <div class="collapse navbar-collapse" id="navbarSupportedContent">
                   <ul class="navbar-nav">
                      <li class="nav-item active">
-                        <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
+                        <a class="nav-link" href="">Home <span class="sr-only">(current)</span></a>
                      </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="true"> <span class="nav-label">Pages <span class="caret"></span></a>
@@ -162,7 +162,7 @@
                <div class="col-md-4">
                    <div class="full">
                       <div class="logo_footer">
-                        <a href="#"><img width="210" src="src/images/logo.png" alt="#" /></a>
+                        <a href="#"><img width="210" src="frontend/images/logo.png" alt="#" /></a>
                       </div>
                       <div class="information_f">
                         <p><strong>ADDRESS:</strong> Berlin</p>
@@ -235,12 +235,12 @@
          </p>
       </div>
       <!-- jQery -->
-      <script src="src/js/jquery-3.4.1.min.js"></script>
+      <script src="frontend/js/jquery-3.4.1.min.js"></script>
       <!-- popper js -->
-      <script src="src/js/popper.min.js"></script>
+      <script src="frontend/js/popper.min.js"></script>
       <!-- bootstrap js -->
-      <script src="src/js/bootstrap.js"></script>
+      <script src="frontend/js/bootstrap.js"></script>
       <!-- custom js -->
-      <script src="src/js/custom.js"></script>
+      <script src="frontend/js/custom.js"></script>
    </body>
 </html>

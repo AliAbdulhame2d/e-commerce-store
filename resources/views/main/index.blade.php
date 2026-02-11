@@ -1,29 +1,29 @@
- @extends('home.master')
+ @extends('main.master')
 
 <!-- slider section -->
 @section('slider')
-@include('home.pages.slider')
+@include('main.pages.slider')
 @endsection
 <!-- end slider section -->
 
  @section('content')
  <!-- why section -->
- @include('home.pages.why')
+ @include('main.pages.why')
  <!-- end why section -->
  
  <!-- arrival section -->
- @include('home.pages.arrival')
+ @include('main.pages.arrival')
  <!-- end arrival section -->
  
  <!-- product section -->
- @include('home.pages.product')
+ @include('main.pages.product')
  <!-- end product section -->
 
  <!-- subscribe section -->
- @include('home.pages.subscribe')
+ @include('main.pages.subscribe')
  <!-- end subscribe section -->
 
  <!-- client section -->
- @include('home.pages.client')
+ @include('main.pages.client')
  <!-- end client section -->
  @endsection
