@@ -17,7 +17,7 @@ Die Anwendung befindet sich aktuell in der Entwicklungsphase.
 ### Startseite
 ![Startseite](screenshots/home.png)
 
-## Admin Dashboard
+### Admin Dashboard
 ![Admin Dashboard](screenshots/catagory.png)
 ---
 
