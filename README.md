@@ -17,6 +17,7 @@ Die Anwendung befindet sich aktuell in der Entwicklungsphase.
 ### Startseite
 ![Startseite](screenshots/home.png)
 
+![Admin Dashboard](screenshots/catagory.png)
 ---
 
 ##  Ziel des Projekts
