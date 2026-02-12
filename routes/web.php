@@ -26,3 +26,7 @@ Route::get('/redirect', [HomeController::class,'redirect']);
 Route::post('/add_catagory', [AdminController::class,'add_catagory']);
 
 Route::get('/view_catagory', [AdminController::class,'view_catagory']);
+
+Route::post('/add_product', [AdminController::class,'add_product']);
+
+Route::get('/show_product', [AdminController::class,'show_product']);
