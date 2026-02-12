@@ -10,16 +10,14 @@ use App\Models\Catagory;
 class AdminController extends Controller
 {
     public function view_catagory(){
-
+    
+        return view('main.admin.pages_admin.catagory');
     }
 
     public function add_catagory(Request $request){
-        
-        
         //$data ist Objekt vom Catagory Model Class
         $data=new Catagory;
 
-        
         # catagory_name ist Column von Catagory Tabele in Datenbank
         # $request ist Array, die vom Form von admin.dashboard.php kommt
         # catagory_input ist die Value, die vom input Feld von admin.dashboard.php kommt
@@ -27,7 +25,7 @@ class AdminController extends Controller
 
         $data->save();
 
-    return redirect()->back();    
+    return redirect()->back()->with('message', 'Catagory Added Successfully');    
     }
 
 }

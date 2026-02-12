@@ -20,7 +20,9 @@ Route::middleware([
     })->name('dashboard');
 });
 
-// redirect Admin und normaler User jede in seinem Page (@aab)
+//(@aab added) redirect Admin und normaler User jede in seinem Page 
 Route::get('/redirect', [HomeController::class,'redirect']);
-// @aab
+
 Route::post('/add_catagory', [AdminController::class,'add_catagory']);
+
+Route::get('/view_catagory', [AdminController::class,'view_catagory']);
