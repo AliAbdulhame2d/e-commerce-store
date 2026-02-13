@@ -9,7 +9,7 @@
 @endif
 
 <form action="{{url('/add_catagory')}}" class="col-lg-6 offset-lg-3" method="POST">
-    <h1 class="text-center">Add Catagory</h1>
+    <h3 class="text-center">Add Catagory</h3>
     @csrf
     <div class="row justify-content-center">
             
