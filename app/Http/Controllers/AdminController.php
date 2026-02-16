@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 
 use Illuminate\Support\Facades\Auth;
 use App\Models\Catagory;
+use App\Models\Product;
 
 class AdminController extends Controller
 {
@@ -32,19 +33,31 @@ class AdminController extends Controller
 
     /* ---------------- Products ---------------- */
     public function show_product(){
-        return view('main.admin.pages_admin.product');
+        $catagory = Catagory::all(); 
+        return view('main.admin.pages_admin.product', compact('catagory'));
     }
 
     public function add_product(Request $request){
-        //$data ist Objekt vom Catagory Model Class
-        $data=new Catagory;
+        //$data ist Objekt vom Product Model Class
+        $data=new Product;
 
-        # catagory_name ist Column von Catagory Tabele in Datenbank
-        # $request ist Array, die vom Form von admin.dashboard.php kommt
-        # catagory_input ist die Value, die vom input Feld von admin.dashboard.php kommt
-        $data->catagory_name = $request->catagory_input;
-
+        # name ist Column von Product Tabele in Datenbank
+        # $request ist Array, die vom Form von admin.pages_admin.product.php kommt
+        # produktname ist die Value, die vom input Feld von admin.pages_admin.product.php kommt
+        $data->name = $request->produktname;
+        $data->price = $request->price;
+        $data->discount_price = $request->discount;
+        $data->quantity = $request->quantity;
+        $data->catagory = $request->catagory;
+        $data->description = $request->description;
+        
+        $image = $request->image;
+        $imagename = time().'.'.$image->getClientOriginalExtension();
+        $request->image->move('images/product_images', $imagename);
+        $data->image = $imagename;
+        
         $data->save();
+       
 
     return redirect()->back()->with('message', 'Product Added Successfully');    
     }

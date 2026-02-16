@@ -1,12 +1,8 @@
 @extends('main.admin.master_admin')
 
 @section('body')
-@if (session()->has('message'))
-    <div class="alert alert-success">
-        <button type="button" class="close" data-dismiss='alert' area-hidden='true'>x</button>
-        {{session()->get('message')}}
-    </div>
-@endif
+
+@include('main.partails.message')
 
 <form action="{{url('/add_catagory')}}" class="col-lg-6 offset-lg-3" method="POST">
     <h3 class="text-center">Add Catagory</h3>

@@ -1,12 +1,13 @@
 @extends('main.admin.master_admin')
 
-
 @section('body')
+
+@include('main.partails.message')
 
 <h3 class="text-center">Add Product</h3>
 <div class="card col-lg-7 mx-auto">
     <div class="card-body">
-      <form action="{{url('/add_product')}}" method="POST" >
+      <form action="{{url('/add_product')}}" method="POST" enctype="multipart/form-data">
         @csrf
         
        <!-- Produktname -->
@@ -19,9 +20,9 @@
 
       <!-- Preis -->
     <div class="row mb-3">
-        <label for="preis" class="col-sm-3 col-form-label">Preis (€)</label>
+        <label for="price" class="col-sm-3 col-form-label">Preis (€)</label>
         <div class="col-sm-9">
-          <input type="number" class="form-control text-success" id="preis" name="prise" placeholder="0.00">
+          <input type="number" class="form-control text-success" id="price" name="price" placeholder="0.00">
         </div>
       </div>
       
@@ -45,27 +46,31 @@
      <div class="row mb-3">
         <label for="catagory" class="col-sm-3 col-form-label">Catagory</label>
         <div class="col-sm-9">
-          <select class="form-control text-success" id="catagory">
-            <option value="1">A</option>
-            <option value="2">B</option>
-            <option value="3">C</option>
+          <select class="form-control text-success" id="catagory" name="catagory">
+           
+           @foreach ($catagory as $item)
+                  <option value="{{$item->catagory_name}}">{{$item->catagory_name}}</option>
+           @endforeach
+
+         
+
           </select>
         </div>
       </div>
 
       <!-- Beschreibung -->
       <div class="row mb-3">
-        <label for="beschreibung" class="col-sm-3 col-form-label">Beschreibung</label>
+        <label for="description" class="col-sm-3 col-form-label">Beschreibung</label>
         <div class="col-sm-9">
-          <textarea class="form-control text-success" id="beschreibung" rows="3"></textarea>
+          <textarea class="form-control text-success" id="description" name="description" rows="3"></textarea>
         </div>
       </div>
 
         <!-- Image -->
         <div class="row mb-3">
-            <label for="beschreibung" class="col-sm-3 col-form-label">Image</label>
+            <label for="image" class="col-sm-3 col-form-label">Image</label>
             <div class="col-sm-9">
-                <input type="file" class="form-control" id="preis">
+                <input type="file" class="form-control" id="image" name="image">
             </div>
         </div>
 
