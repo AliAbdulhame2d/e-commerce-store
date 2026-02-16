@@ -19,6 +19,9 @@ Die Anwendung befindet sich aktuell in der Entwicklungsphase.
 
 ### Admin Dashboard
 ![Admin Dashboard](screenshots/catagory.png)
+
+### Add Produkt
+![Add Produkt](screenshots/add_product.png)
 ---
 
 ##  Ziel des Projekts
