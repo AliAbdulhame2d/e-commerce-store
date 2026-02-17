@@ -13,7 +13,8 @@ class AdminController extends Controller
 
     /* ---------------- Catagorys ---------------- */
     public function view_catagory(){
-        return view('main.admin.pages_admin.catagory');
+        $catagory = Catagory::all();
+        return view('main.admin.pages_admin.catagory', compact('catagory'));
     }
 
     public function add_catagory(Request $request){

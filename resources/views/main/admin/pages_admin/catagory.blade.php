@@ -14,4 +14,26 @@
     </div>
 </form>
 
+<div class="col-lg-6 offset-lg-3 mt-5">
+    <table class="table table-bordered table-hover text-center text-white">
+        <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Catagory</th>
+            <th scope="col">...</th>
+          </tr>
+        </thead>
+        <tbody>
+         @foreach ($catagory as $item)    
+          <tr>
+            <th scope="row">{{ $item->id }}</th>
+            <td>{{ $item->catagory_name }}</td>
+            <td><a class="btn btn-danger" href="{{url('delete_catagory', $item->id )}}">Delete</a></td>
+          </tr>
+          @endforeach
+        </tbody>
+    </table>
+</div>
+
+
 @endsection
