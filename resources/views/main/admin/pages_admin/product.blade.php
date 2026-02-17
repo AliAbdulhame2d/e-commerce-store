@@ -14,7 +14,7 @@
       <div class="row mb-3">
         <label for="produktname" class="col-sm-3 col-form-label">Produktname</label>
         <div class="col-sm-9">
-            <input type="text" class="form-control text-success" name="produktname" id="produktname" placeholder="Produktname eingeben">
+            <input type="text" class="form-control text-success" name="produktname" id="produktname" placeholder="Produktname eingeben" required>
         </div>
       </div>
 
@@ -22,7 +22,7 @@
     <div class="row mb-3">
         <label for="price" class="col-sm-3 col-form-label">Preis (€)</label>
         <div class="col-sm-9">
-          <input type="number" class="form-control text-success" id="price" name="price" placeholder="0.00">
+          <input type="number" class="form-control text-success" id="price" name="price" placeholder="0.00" required>
         </div>
       </div>
       
@@ -38,7 +38,7 @@
      <div class="row mb-3">
         <label for="quantity" class="col-sm-3 col-form-label">Quantity</label>
         <div class="col-sm-9">
-          <input type="number" class="form-control text-success" id="quantity" name="quantity" min="0" placeholder="0">
+          <input type="number" class="form-control text-success" id="quantity" name="quantity" min="0" placeholder="0" required>
         </div>
       </div>
 
@@ -70,7 +70,7 @@
         <div class="row mb-3">
             <label for="image" class="col-sm-3 col-form-label">Image</label>
             <div class="col-sm-9">
-                <input type="file" class="form-control" id="image" name="image">
+                <input type="file" class="form-control" id="image" name="image" required>
             </div>
         </div>
 
