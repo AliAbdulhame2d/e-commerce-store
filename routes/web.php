@@ -2,7 +2,6 @@
 
 use Illuminate\Support\Facades\Route;
 
-//@aab
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\AdminController;
 
@@ -20,7 +19,7 @@ Route::middleware([
     })->name('dashboard');
 });
 
-//(@aab added) redirect Admin und normaler User jede in seinem Page 
+//(@aab Kom..) redirect Admin und normaler User jede in seinem Page 
 Route::get('/redirect', [HomeController::class,'redirect']);
 
 Route::post('/add_catagory', [AdminController::class,'add_catagory']);
@@ -29,4 +28,8 @@ Route::get('/view_catagory', [AdminController::class,'view_catagory']);
 
 Route::post('/add_product', [AdminController::class,'add_product']);
 
+//(@aab Kom..) Produkt GUI, um ein neues Produkt zu hinzufügen 
+Route::get('/view_product', [AdminController::class,'view_product']);
+
+//(@aab Kom..) show all Produkts, um zu löchen oder zu berabeiten 
 Route::get('/show_product', [AdminController::class,'show_product']);

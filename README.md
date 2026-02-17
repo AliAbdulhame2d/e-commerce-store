@@ -22,6 +22,9 @@ Die Anwendung befindet sich aktuell in der Entwicklungsphase.
 
 ### Add Produkt
 ![Add Produkt](screenshots/add_product.png)
+
+### Produkte
+![Produkte](screenshots/products.png)
 ---
 
 ##  Ziel des Projekts
