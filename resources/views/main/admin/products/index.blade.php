@@ -21,23 +21,23 @@
           </tr>
         </thead>
         <tbody>
-         @foreach ($products as $item)    
+         @foreach ($products as $product)    
           <tr>
-            <th scope="row">{{ $item->id }}</th>
-            <td>{{ $item->name }}</td>
-            <td>{{ $item->price }}</td>
-            <td>{{ $item->discount_price }}</td>
-            <td>{{ $item->quantity }}</td>
-            <td>{{ $item->category }}</td>
-            <td>{{ $item->description }}</td>
-            <td>{{ $item->image }}</td>
+            <th scope="row">{{ $product->id }}</th>
+            <td>{{ $product->name }}</td>
+            <td>{{ $product->price }}</td>
+            <td>{{ $product->discount_price }}</td>
+            <td>{{ $product->quantity }}</td>
+            <td>{{ $product->category }}</td>
+            <td>{{ $product->description }}</td>
+            <td ><img class="form-control p-0 m-0" src="{{asset('images/products/'.$product->image)}}" style="height: 100px; width: 100px; border-radius: 0%; "></td>
             <td>
-                <form class="d-inline" action="{{route('products.destroy', $item->id )}}" method="POST">
+                <form class="d-inline" action="{{route('products.destroy', $product->id )}}" method="POST">
                   @csrf
                   @method('DELETE')
                   <button type="submit" class="btn btn-danger">Delete</button>
                 </form>
-                <a class="btn btn-success" href="{{route('products.edit', $item->id )}}">Edit</a>
+                <a class="btn btn-success" href="{{route('products.edit', $product->id )}}">Edit</a>
             </td>
           </tr>
           @endforeach

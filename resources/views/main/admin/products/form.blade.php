@@ -78,7 +78,7 @@
                 <label for="image" class="col-sm-3 col-form-label">Image</label>
                 <div class="col-sm-9" >
                     @if (isset($product) && $product->image)
-                        <img class="form-control" src="{{asset('images/products/'.$product->image)}}" style="height: 150px;" required>
+                        <img class="form-control" src="{{asset('images/products/'.$product->image)}}" style="height: 150px;">
                     @endif
                    <input type="file" class="form-control" id="image" name="image" required>
                  </div>
