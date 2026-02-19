@@ -1,9 +1,4 @@
 
-<h3 class="text-center">
-  {{-- action: ist der gleiche Name für Header und Button--}}
-  @yield('process') Product
-</h3>
-
 <div class="card col-lg-7 mx-auto overflow-auto" style="height: 485px">
     <div class="card-body">
       

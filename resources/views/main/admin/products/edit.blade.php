@@ -2,10 +2,10 @@
 
 @section('body')
 @include('main.partails.message')
-
- {{-- process: ist der gleiche Name für Header und Button--}}
+<h3 class="text-center">Edit Product</h3>
+ {{-- process: ist der Name für Button--}}
 @section('process')
-   Edit
+   Update
 @endsection 
 
 @include('main.admin.products.form')
