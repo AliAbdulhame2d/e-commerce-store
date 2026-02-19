@@ -17,7 +17,7 @@ return new class extends Migration
             $table->string('price');
             $table->string('discount_price');
             $table->string('quantity');
-            $table->string('catagory');
+            $table->string('category');
             $table->string('description');
             $table->string('image');
             $table->timestamps();

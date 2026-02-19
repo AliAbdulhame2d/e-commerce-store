@@ -1,4 +1,4 @@
-@extends('main.admin.master_admin')
+@extends('main.admin.master')
 
 @section('body')
     @include('main.admin.body')

@@ -1,4 +1,4 @@
-@extends('main.admin.master_admin')
+@extends('main.admin.master')
 
 @section('body')
 
@@ -14,26 +14,30 @@
             <th scope="col">Price</th>
             <th scope="col">Discount</th>
             <th scope="col">Quantity</th>
-            <th scope="col">Catagory</th>
+            <th scope="col">Category</th>
             <th scope="col">Description</th>
             <th scope="col">Image</th>
             <th scope="col">...</th>
           </tr>
         </thead>
         <tbody>
-         @foreach ($product as $item)    
+         @foreach ($products as $item)    
           <tr>
             <th scope="row">{{ $item->id }}</th>
             <td>{{ $item->name }}</td>
             <td>{{ $item->price }}</td>
             <td>{{ $item->discount_price }}</td>
             <td>{{ $item->quantity }}</td>
-            <td>{{ $item->catagory }}</td>
+            <td>{{ $item->category }}</td>
             <td>{{ $item->description }}</td>
             <td>{{ $item->image }}</td>
             <td>
-                <a class="btn btn-danger" href="{{url('delete_product', $item->id )}}">Delete</a>
-                <a class="btn btn-success" href="{{url('edit_product', $item->id )}}">Edit</a>
+                <form class="d-inline" action="{{route('products.destroy', $item->id )}}" method="POST">
+                  @csrf
+                  @method('DELETE')
+                  <button type="submit" class="btn btn-danger">Delete</button>
+                </form>
+                <a class="btn btn-success" href="{{route('products.edit', $item->id )}}">Edit</a>
             </td>
           </tr>
           @endforeach

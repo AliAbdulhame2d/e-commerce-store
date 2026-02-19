@@ -3,11 +3,15 @@
 use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\HomeController;
-use App\Http\Controllers\AdminController;
+use App\Http\Controllers\ProductController;
+use App\Http\Controllers\CategoryController;
 
 Route::get('/', function () {
-    return view('main.index');
+    return view('main.home');
 });
+
+//(@aab Kom..) redirect Admin und normaler User jede in seinem Page 
+//Route::get('/redirect', [HomeController::class,'redirect']);
 
 Route::middleware([
     'auth:sanctum',
@@ -19,21 +23,26 @@ Route::middleware([
     })->name('dashboard');
 });
 
-//(@aab Kom..) redirect Admin und normaler User jede in seinem Page 
-Route::get('/redirect', [HomeController::class,'redirect']);
 
-Route::post('/add_catagory', [AdminController::class,'add_catagory']);
+Route::resource('products', ProductController::class);
+Route::resource('categories', CategoryController::class);
 
-Route::get('/view_catagory', [AdminController::class,'view_catagory']);
 
-Route::get('/delete_catagory/{id}', [AdminController::class,'delete_catagory']);
 
-Route::post('/add_product', [AdminController::class,'add_product']);
+/*Route::post('/add_category', [AdminController::class,'add_category']);
 
-//(@aab Kom..) Produkt GUI, um ein neues Produkt zu hinzufügen 
-Route::get('/view_product', [AdminController::class,'view_product']);
+Route::get('/view_category', [AdminController::class,'view_category']);
 
-//(@aab Kom..) show all Produkts, um zu löchen oder zu berabeiten 
-Route::get('/show_product', [AdminController::class,'show_product']);
+Route::get('/delete_category/{id}', [AdminController::class,'delete_category']);
 
-Route::get('/delete_product/{id}', [AdminController::class,'delete_product']);
+Route::post('/add_product', [ProductController::class,'create']);
+
+
+
+//(@aab) show all Produkts, um zu löchen oder zu berabeiten 
+Route::get('/show_products', [ProductController::class,'show_products']);
+
+Route::get('/delete_product/{id}', [ProductController::class,'destroy']);
+
+Route::get('/edit_product/{id}', [ProductController::class,'edit']);
+*/

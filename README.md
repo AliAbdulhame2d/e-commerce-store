@@ -18,7 +18,7 @@ Die Anwendung befindet sich aktuell in der Entwicklungsphase.
 ![Startseite](screenshots/home.png)
 
 ### Admin Dashboard
-![Admin Dashboard](screenshots/catagory.png)
+![Admin Dashboard](screenshots/category.png)
 
 ### Add Produkt
 ![Add Produkt](screenshots/add_product.png)
