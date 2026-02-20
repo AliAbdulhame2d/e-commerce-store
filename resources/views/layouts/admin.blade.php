@@ -27,14 +27,14 @@
     <div class="container-scroller">
 
           <!-- partial:partials/_sidebar.html -->
-          @include('main.admin.sidebar')
+          @include('admin.partials.sidebar')
           <!-- partial -->
           
 
           <div class="container-fluid page-body-wrapper">
             
                 <!-- partial:partials/_navbar.html -->
-                @include('main.admin.header')
+                @include('admin.partials.header')
                 <!-- partial -->
                 
                 <div class="main-panel">
@@ -44,7 +44,7 @@
                     </div>
                     
                       <!-- partial:partials/_footer.html -->
-                      @include('main.admin.footer')
+                      @include('admin.partials.footer')
                     <!-- partial -->
                 </div>
                 <!-- main-panel ends -->

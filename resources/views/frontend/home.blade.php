@@ -1,29 +1,29 @@
- @extends('main.master')
+ @extends('layouts.app')
 
 <!-- slider section -->
 @section('slider')
-@include('main.pages.slider')
+@include('frontend.partials.slider')
 @endsection
 <!-- end slider section -->
 
  @section('content')
  <!-- why section -->
- @include('main.pages.why')
+ @include('frontend.partials.why')
  <!-- end why section -->
  
  <!-- arrival section -->
- @include('main.pages.arrival')
+ @include('frontend.partials.arrival')
  <!-- end arrival section -->
  
  <!-- product section -->
- @include('main.pages.product')
+ @include('frontend.partials..product')
  <!-- end product section -->
 
  <!-- subscribe section -->
- @include('main.pages.subscribe')
+ @include('frontend.partials..subscribe')
  <!-- end subscribe section -->
 
  <!-- client section -->
- @include('main.pages.client')
+ @include('frontend.partials..client')
  <!-- end client section -->
  @endsection

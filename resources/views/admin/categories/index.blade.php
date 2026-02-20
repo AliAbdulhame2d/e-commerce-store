@@ -1,8 +1,8 @@
-@extends('main.admin.master')
+@extends('layouts.admin')
 
 @section('body')
 
-@include('main.partails.message')
+<x-alert />
 
 <form action="{{route('categories.store')}}" class="col-lg-6 offset-lg-3" method="POST">
     <h3 class="text-center">Add Category</h3>

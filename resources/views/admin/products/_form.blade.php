@@ -32,7 +32,7 @@
           <div class="row mb-3">
             <label for="discount" class="col-sm-3 col-form-label">Discount (€)</label>
             <div class="col-sm-9">
-              <input type="number" class="form-control text-success" id="discount" name="discount" placeholder="0.00" value="{{old( 'discount', $product->discount_price ?? '') }}">
+              <input type="number" class="form-control text-success" id="discount" name="discount" placeholder="0.00" value="{{old( 'discount', $product->rice ?? '') }}">
             </div>
           </div>
 
@@ -46,12 +46,12 @@
 
           <!-- Category -->
           <div class="row mb-3">
-            <label for="category" class="col-sm-3 col-form-label">Category</label>
+            <label for="category_id" class="col-sm-3 col-form-label">Category</label>
             <div class="col-sm-9">
-              <select class="form-control text-success" id="category" name="category">
+              <select class="form-control text-success" id="category_id" name="category_id">
               
               @foreach ($categories as $category)
-                      <option value="{{$category->name}}" {{isset($product) && ($category->name == $product->category) ? 'selected' : '' }}>{{$category->name}}</option>
+                      <option value="{{$category->id}}" {{isset($product) && ($category->id == $product->category_id) ? 'selected' : '' }}>{{$category->name}}</option>
               @endforeach
 
             
@@ -71,9 +71,9 @@
             <!-- Image -->
             <div class="row mb-3">
                 <label for="image" class="col-sm-3 col-form-label">Image</label>
-                <div class="col-sm-9" >
+                <div class="col-sm-9 " >
                     @if (isset($product) && $product->image)
-                        <img class="form-control" src="{{asset('images/products/'.$product->image)}}" style="height: 150px;">
+                        <img class="form-control" src="{{asset('images/products/'.$product->image)}}" style="height: 150px; width: 150px;">
                     @endif
                    <input type="file" class="form-control" id="image" name="image" required>
                  </div>

@@ -1,7 +1,8 @@
-@extends('main.admin.master')
+@extends('layouts.admin')
 
 @section('body')
-@include('main.partails.message')
+
+<x-alert />
 
 <h3 class="text-center">Add Product</h3>
  {{-- process: ist der Name für Button--}}
@@ -10,5 +11,5 @@
    Add  
 @endsection 
 
-@include('main.admin.products.form')
+@include('admin.products._form')
 @endsection

@@ -15,9 +15,13 @@ return new class extends Migration
             $table->id();
             $table->string('name'); 
             $table->string('price');
-            $table->string('discount_price');
+            $table->string('discount');
             $table->string('quantity');
-            $table->string('category');
+
+            $table->foreignId('category_id')
+            ->constrained()
+            -> onDelete('cascade');
+            
             $table->string('description');
             $table->string('image');
             $table->timestamps();

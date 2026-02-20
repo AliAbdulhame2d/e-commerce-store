@@ -15,28 +15,28 @@ class ProductController extends Controller
 
     //Zeigen alle Produkte
     public function index(){
-        $products = Product::all(); 
-        return view('main.admin.products.index', compact('products'));
+        $products = Product::with('category')->get(); 
+        return view('admin.products.index', compact('products'));
     }
 
     //Zeigen Add-Produkt-GUI, um ein neues Produkt zu hinzufügen
     public function create(){
         $categories = Category::all(); 
-        return view('main.admin.products.create', compact('categories'));
+        return view('admin.products.create', compact('categories'));
     }
         
     public function store(Request $request){
         //$product ist Objekt vom Product Model Class
-        $product=new Product;
+        $product = new Product;
 
         # name ist Column von Product Tabele in Datenbank
         # $request ist Array, die vom Form von admin.product.product.php kommt
         # produktname ist die Value, die vom input Feld von admin.product.product.php kommt
         $product->name = $request->produktname;
         $product->price = $request->price;
-        $product->discount_price = $request->discount;
+        $product->discount = $request->discount;
         $product->quantity = $request->quantity;
-        $product->category = $request->category;
+        $product->category_id = $request->category_id;
         $product->description = $request->description;
         
         $image = $request->image;
@@ -46,7 +46,6 @@ class ProductController extends Controller
         
         $product->save();
        
-
     return redirect()->back()->with('message', 'Product Added Successfully');    
     }
 
@@ -59,14 +58,14 @@ class ProductController extends Controller
     public function edit($id){
         $categories = Category::all();
         $product = Product::findOrFail($id);
-        return view('main.admin.products.edit', compact('categories', 'product'));
+        return view('admin.products.edit', compact('categories', 'product'));
     }
 
-    public function update($id){
-      /*  $product = Product::findOrFail($id);
+    public function update(Request $request, $id){
+        /*   $product = Product::findOrFail($id);
 
-        return view('main.admin.products.create', compact('categories', 'product'));
-    */
+        return redirect()->back()->with('message', 'Product Updated Successfuly');
+  */
     }
 
 

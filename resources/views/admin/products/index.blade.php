@@ -1,8 +1,8 @@
-@extends('main.admin.master')
+@extends('layouts.admin')
 
 @section('body')
 
-@include('main.partails.message')
+<x-alert />
 
 <h3 class="text-center">Products</h3>
 <div class="overflow-auto mt-3">
@@ -26,9 +26,9 @@
             <th scope="row">{{ $product->id }}</th>
             <td>{{ $product->name }}</td>
             <td>{{ $product->price }}</td>
-            <td>{{ $product->discount_price }}</td>
+            <td>{{ $product->discount }}</td>
             <td>{{ $product->quantity }}</td>
-            <td>{{ $product->category }}</td>
+            <td>{{ $product->category->name }}</td>
             <td>{{ $product->description }}</td>
             <td ><img class="form-control p-0 m-0" src="{{asset('images/products/'.$product->image)}}" style="height: 100px; width: 100px; border-radius: 0%; "></td>
             <td>

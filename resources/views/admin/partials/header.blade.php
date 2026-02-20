@@ -150,7 +150,7 @@
         </li>
         
         {{-- The Login/Logout/Registration Buttons --}}
-       @include('main.partails.auth-buttons')
+        <x-auth-buttons />
       
       </ul>
 

@@ -89,6 +89,34 @@ Neue Funktionen werden regelmäßig hinzugefügt.
 
 ---
 
+##  Struktur
+
+ layouts/
+    app.blade.php
+    admin.blade.php
+
+admin/
+    dashboard.blade.php
+    products/
+    categories/
+    partials/
+        header.blade.php
+        sidebar.blade.php
+        footer.blade.php
+
+frontend/
+    home.blade.php
+    partials/
+        header.blade.php
+        slider.blade.php
+        footer.blade.php
+
+components/
+    alert.blade.php
+    auth-buttons.blade.php
+
+---
+
 ##  Autor
 Ali Abdulhameed / Feb.2026
 

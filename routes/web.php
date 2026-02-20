@@ -7,11 +7,11 @@ use App\Http\Controllers\ProductController;
 use App\Http\Controllers\CategoryController;
 
 Route::get('/', function () {
-    return view('main.home');
+    return view('frontend.home');
 });
 
 //(@aab Kom..) redirect Admin und normaler User jede in seinem Page 
-//Route::get('/redirect', [HomeController::class,'redirect']);
+Route::get('/redirect', [HomeController::class,'redirect']);
 
 Route::middleware([
     'auth:sanctum',
