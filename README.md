@@ -28,8 +28,43 @@ Die Anwendung befindet sich aktuell in der Entwicklungsphase.
 
 ### Edit Produkt
 ![Edit Produkt](screenshots/edit_product.png)
+
+
 ---
 
+
+## Project Structure
+
+```
+resources/views/
+│
+├── layouts/
+│   ├── app.blade.php
+│   └── admin.blade.php
+│
+├── admin/
+│   ├── dashboard.blade.php
+│   ├── products/
+│   ├── categories/
+│   └── partials/
+│       ├── header.blade.php
+│       ├── sidebar.blade.php
+│       └── footer.blade.php
+│
+├── frontend/
+│   ├── home.blade.php
+│   └── partials/
+│       ├── header.blade.php
+│       ├── slider.blade.php
+│       └── footer.blade.php
+│
+└── components/
+    ├── alert.blade.php
+    └── auth-buttons.blade.php
+```
+
+
+---
 ##  Ziel des Projekts
 Dieses Projekt dient dazu:
 
@@ -86,34 +121,6 @@ Die Entwicklung erfolgt parallel zu einer YouTube Schulung zur Erstellung eines 
  Projekt in Entwicklung
 
 Neue Funktionen werden regelmäßig hinzugefügt.
-
----
-
-##  Struktur
-
- layouts/
-    app.blade.php
-    admin.blade.php
-
-admin/
-    dashboard.blade.php
-    products/
-    categories/
-    partials/
-        header.blade.php
-        sidebar.blade.php
-        footer.blade.php
-
-frontend/
-    home.blade.php
-    partials/
-        header.blade.php
-        slider.blade.php
-        footer.blade.php
-
-components/
-    alert.blade.php
-    auth-buttons.blade.php
 
 ---
 
