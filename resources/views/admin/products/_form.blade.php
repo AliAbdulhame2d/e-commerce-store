@@ -14,9 +14,9 @@
 
           <!-- Produktname -->
           <div class="row mb-3">
-            <label for="produktname" class="col-sm-3 col-form-label">Name</label>
+            <label for="name" class="col-sm-3 col-form-label">Name</label>
             <div class="col-sm-9">
-                <input type="text" class="form-control text-success" name="produktname" id="produktname" placeholder="Produktname eingeben" value="{{old('produktname', $product->name ?? '')}}" required>
+                <input type="text" class="form-control text-success" name="name" id="name" placeholder="Produktname eingeben" value="{{old('name', $product->name ?? '')}}" required>
             </div>
           </div>
 
@@ -32,7 +32,7 @@
           <div class="row mb-3">
             <label for="discount" class="col-sm-3 col-form-label">Discount (€)</label>
             <div class="col-sm-9">
-              <input type="number" class="form-control text-success" id="discount" name="discount" placeholder="0.00" value="{{old( 'discount', $product->rice ?? '') }}">
+              <input type="number" class="form-control text-success" id="discount" name="discount" placeholder="0.00" value="{{old( 'discount', $product->discount ?? '') }}">
             </div>
           </div>
 
@@ -73,7 +73,7 @@
                 <label for="image" class="col-sm-3 col-form-label">Image</label>
                 <div class="col-sm-9 " >
                     @if (isset($product) && $product->image)
-                        <img class="form-control" src="{{asset('images/products/'.$product->image)}}" style="height: 150px; width: 150px;">
+                        <img class="form-control" src="{{asset('storage/'.$product->image)}}" style="height: 150px; width: 150px;">
                     @endif
                    <input type="file" class="form-control" id="image" name="image" required>
                  </div>

@@ -30,7 +30,7 @@
             <td>{{ $product->quantity }}</td>
             <td>{{ $product->category->name }}</td>
             <td>{{ $product->description }}</td>
-            <td ><img class="form-control p-0 m-0" src="{{asset('images/products/'.$product->image)}}" style="height: 100px; width: 100px; border-radius: 0%; "></td>
+            <td ><img class="form-control p-0 m-0" src="{{asset('storage/'.$product->image)}}" style="height: 100px; width: 100px; border-radius: 0%; "></td>
             <td>
                 <form class="d-inline" action="{{route('products.destroy', $product->id )}}" method="POST">
                   @csrf

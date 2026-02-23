@@ -15,9 +15,9 @@ class CategoryController extends Controller
         return view('admin.categories.index', compact('categories'));
     }
 
-    public function store(Request $request){
+    public function store(StoreCategoryRequest $request){
         //$data ist Objekt vom Category Model Class
-        $category=new Category;
+        $data = $request->validated();
 
         # name ist Column von Category Tabele in Datenbank
         # $request ist Array, die vom Form von admin.dashboard.php kommt
@@ -26,7 +26,7 @@ class CategoryController extends Controller
 
         $category->save();
 
-    return redirect()->back()->with('message', 'Category Added Successfully');    
+    return redirect()->back()->with('success', 'Category Added Successfully');    
     }
    
     public function destroy($id){   
@@ -34,7 +34,7 @@ class CategoryController extends Controller
     
         $category->delete();
 
-        return redirect()->back()->with('message', 'Category Deleted Successfully');
+        return redirect()->back()->with('success', 'Category Deleted Successfully');
     }
 
 }

@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Models\Category;
 use App\Models\Product;
+use App\Http\Requests\StoreProductRequest;
 
 class ProductController extends Controller
 {
@@ -14,59 +15,64 @@ class ProductController extends Controller
     /* ---------------- Products ---------------- */
 
     //Zeigen alle Produkte
-    public function index(){
-        $products = Product::with('category')->get(); 
+    public function index() {
+        $products = Product::with('category')->paginate(10); //get(); 
         return view('admin.products.index', compact('products'));
     }
 
     //Zeigen Add-Produkt-GUI, um ein neues Produkt zu hinzufügen
-    public function create(){
+    public function create() {
         $categories = Category::all(); 
         return view('admin.products.create', compact('categories'));
     }
-        
-    public function store(Request $request){
-        //$product ist Objekt vom Product Model Class
-        $product = new Product;
 
-        # name ist Column von Product Tabele in Datenbank
-        # $request ist Array, die vom Form von admin.product.product.php kommt
-        # produktname ist die Value, die vom input Feld von admin.product.product.php kommt
-        $product->name = $request->produktname;
-        $product->price = $request->price;
-        $product->discount = $request->discount;
-        $product->quantity = $request->quantity;
-        $product->category_id = $request->category_id;
-        $product->description = $request->description;
-        
-        $image = $request->image;
-        $imagename = time().'.'.$image->getClientOriginalExtension();
-        $request->image->move('images/products', $imagename);
-        $product->image = $imagename;
-        
-        $product->save();
-       
-    return redirect()->back()->with('message', 'Product Added Successfully');    
-    }
-
-    public function destroy($id){
-        $product=Product::find($id);
-        $product->delete();
-        return redirect()->back()->with('message', 'Product Deleted Successfuly');
-    }
-
-    public function edit($id){
+    public function edit($id) {
         $categories = Category::all();
         $product = Product::findOrFail($id);
         return view('admin.products.edit', compact('categories', 'product'));
     }
 
-    public function update(Request $request, $id){
-        /*   $product = Product::findOrFail($id);
+    public function destroy($id) {
+        $product=Product::find($id);
 
-        return redirect()->back()->with('message', 'Product Updated Successfuly');
-  */
+        if($product->image){
+            \Storage::disk('public')->delete($product->image);
+        }
+
+        $product->delete();
+        return redirect()->back()->with('success', 'Product Deleted Successfuly');
     }
 
+    public function store(StoreProductRequest $request) {
+        $data = $request->validated();
+       
+        if($request->hasFile('image')){
+            $data['image'] = $request->file('image')->store('products', 'public');
+        }
+
+        Product::create($data);
+       
+    return redirect()->back()->with('success', 'Product Added Successfully');    
+    }
+
+    public function update(StoreProductRequest $request, $id) { 
+        
+        $product = Product::findOrFail($id);
+        $data = $request->validated();
+
+        if ($request->hasFile('image')) {
+            //löchen das alte Bild
+            if ($product->image) {
+                \Storage::disk('public')->delete($product->image);
+            }
+            //speichern das Bild in Storage-Ordner
+            $data['image'] = $request->file('image')->store('products', 'public');
+        }
+
+        $product->update($data);
+
+        return redirect()->route('products.index')
+            ->with('success', 'Product Updated Successfully');
+    }
 
 }

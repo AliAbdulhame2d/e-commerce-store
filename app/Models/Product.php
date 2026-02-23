@@ -11,4 +11,15 @@ class Product extends Model
         return 
         $this->belongsTo(Category::class);
     }
+
+    //um alle Daten gemeinsam zu hinzufügen
+    protected $fillable = [
+        'name',
+        'price',
+        'discount',
+        'quantity',
+        'category_id',
+        'description',
+        'image',
+    ];
 }

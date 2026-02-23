@@ -10,9 +10,6 @@ Route::get('/', function () {
     return view('frontend.home');
 });
 
-//(@aab Kom..) redirect Admin und normaler User jede in seinem Page 
-Route::get('/redirect', [HomeController::class,'redirect']);
-
 Route::middleware([
     'auth:sanctum',
     config('jetstream.auth_session'),
@@ -23,9 +20,14 @@ Route::middleware([
     })->name('dashboard');
 });
 
+Route::middleware('auth')->group(function () {
 
-Route::resource('products', ProductController::class);
-Route::resource('categories', CategoryController::class);
+    Route::get('/redirect', [HomeController::class, 'redirect']); 
+    Route::resource('products', ProductController::class);
+    Route::resource('categories', CategoryController::class);
+    
+});
+
 
 
 

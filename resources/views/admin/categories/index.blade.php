@@ -24,12 +24,12 @@
           </tr>
         </thead>
         <tbody>
-         @foreach ($categories as $item)    
+         @foreach ($categories as $category)    
           <tr>
-            <th scope="row">{{ $item->id }}</th>
-            <td>{{ $item->name }}</td>
+            <th scope="row">{{ $category->id }}</th>
+            <td>{{ $category->name }}</td>
             <td>
-              <form action="{{route('categories.destroy', $item->id)}}" method="POST">
+              <form action="{{route('categories.destroy', $category->id)}}" method="POST">
               @csrf
               @method('DELETE')
               <button class="btn btn-danger">Delete</button>

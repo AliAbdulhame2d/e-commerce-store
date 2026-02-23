@@ -1,6 +1,6 @@
-@if (session()->has('message'))
+@if (session()->has('success'))
 <div class="alert alert-success">
     <button type="button" class="close" data-dismiss='alert' area-hidden='true'>x</button>
-    {{session()->get('message')}}
+    {{session()->get('success')}}
 </div>
 @endif
