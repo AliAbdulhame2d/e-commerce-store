@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 //@aab Code (redirect Admin und normaler User jede in seinen Page)
 use Illuminate\Support\Facades\Auth;
 use App\Models\User;
+use App\Models\Product;
 
 class HomeController extends Controller
 {
@@ -20,7 +21,11 @@ class HomeController extends Controller
         } else { 
             return view('frontend.home');
         }
-        
        
+    }
+
+    public function index() {
+            $products = Product::all();
+            return view('frontend.home', compact('products'));
     }
 }

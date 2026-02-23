@@ -46,7 +46,7 @@ class ProductController extends Controller
     public function store(StoreProductRequest $request) {
         $data = $request->validated();
        
-        if($request->hasFile('image')){
+        if($request->hasFile('image')) {
             $data['image'] = $request->file('image')->store('products', 'public');
         }
 

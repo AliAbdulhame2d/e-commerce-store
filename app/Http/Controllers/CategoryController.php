@@ -10,26 +10,20 @@ use App\Models\Product;
 class CategoryController extends Controller
 {
     /* ---------------- Categorys ---------------- */
-    public function index(){
+    public function index() {
         $categories = Category::all();
         return view('admin.categories.index', compact('categories'));
     }
 
-    public function store(StoreCategoryRequest $request){
-        //$data ist Objekt vom Category Model Class
+    public function store(StoreCategoryRequest $request) {
+       
         $data = $request->validated();
-
-        # name ist Column von Category Tabele in Datenbank
-        # $request ist Array, die vom Form von admin.dashboard.php kommt
-        # category_input ist die Value, die vom input Feld von admin.dashboard.php kommt
-        $category->name = $request->category_input;
-
-        $category->save();
+        Category::create($data);
 
     return redirect()->back()->with('success', 'Category Added Successfully');    
     }
    
-    public function destroy($id){   
+    public function destroy($id) {   
         $category = Category::findOrFail($id);
     
         $category->delete();

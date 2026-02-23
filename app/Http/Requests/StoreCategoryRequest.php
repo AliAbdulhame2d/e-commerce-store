@@ -21,7 +21,7 @@ class StoreCategoryRequest extends FormRequest
      */
     public function rules(): array
     {
-        return [
+        return [//categories ist Table in Datenbank und name ist Column
             'name'=>'required|string|max:255|unique:categories,name',
         ];
     }
