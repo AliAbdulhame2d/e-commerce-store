@@ -1,7 +1,7 @@
 
 <div class="card col-lg-7 mx-auto overflow-auto" style="height: 485px">
     <div class="card-body">
-      
+     
       <form action="{{isset ($product) ?
         route('products.update', $product->id) :
         route('products.store')}}" 

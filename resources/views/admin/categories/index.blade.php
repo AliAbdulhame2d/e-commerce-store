@@ -9,7 +9,7 @@
     @csrf
     <div class="row justify-content-center">
             
-            <input class="mr-1" type="text" name="category_input" placeholder="Category Name">
+            <input class="mr-1" type="text" name="name" placeholder="Category Name">
             <input type="submit" class="btn btn-primary" name="submit"  value="Add Category">
     </div>
 </form>
