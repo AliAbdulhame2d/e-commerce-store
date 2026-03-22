@@ -20,14 +20,15 @@
                    </div>
                 </div>
                 <div class="img-box">
-                   <img src="frontend/images/p12.png" alt="">
+                 
+                   <img src="{{'storage/'.$product->image}}" alt="">
                 </div>
                 <div class="detail-box">
                    <h5>
-                      Women's Dress
+                     {{$product->name}}
                    </h5>
                    <h6>
-                      $65
+                     {{$product->price}}
                    </h6>
                 </div>
              </div>

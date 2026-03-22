@@ -17,7 +17,10 @@
             <label for="name" class="col-sm-3 col-form-label">Name</label>
             <div class="col-sm-9">
                 <input type="text" class="form-control text-success" name="name" id="name" placeholder="Produktname eingeben" value="{{old('name', $product->name ?? '')}}" required>
-            </div>
+            @error('name')
+                <p style="color: red">{{$message}}</p>
+            @enderror
+              </div>
           </div>
 
           <!-- Preis -->
@@ -25,6 +28,9 @@
             <label for="price" class="col-sm-3 col-form-label">Price (€)</label>
             <div class="col-sm-9">
               <input type="number" class="form-control text-success" id="price" name="price" placeholder="0.00" value="{{old('price', $product->price ?? '')}}" required>
+              @error('price')
+                <p style="color: red">{{$message}}</p>
+              @enderror
             </div>
           </div>
         
@@ -33,6 +39,9 @@
             <label for="discount" class="col-sm-3 col-form-label">Discount (€)</label>
             <div class="col-sm-9">
               <input type="number" class="form-control text-success" id="discount" name="discount" placeholder="0.00" value="{{old( 'discount', $product->discount ?? '') }}">
+              @error('discount')
+                <p style="color: red">{{$message}}</p>
+              @enderror
             </div>
           </div>
 
@@ -41,6 +50,9 @@
             <label for="quantity" class="col-sm-3 col-form-label">Quantity</label>
             <div class="col-sm-9">
               <input type="number" class="form-control text-success" id="quantity" name="quantity" min="0" placeholder="0" value="{{old('quantity', $product->quantity ?? '') }}" required>
+              @error('quantity')
+                <p style="color: red">{{$message}}</p>
+              @enderror
             </div>
           </div>
 
@@ -65,6 +77,9 @@
             <label for="description" class="col-sm-3 col-form-label">Description</label>
             <div class="col-sm-9">
               <textarea class="form-control text-success" id="description" name="description" rows="3">{{old('description', $product->description ?? '') }}</textarea>
+              @error('description')
+                <p style="color: red">{{$message}}</p>
+              @enderror
             </div>
           </div>
 
@@ -76,7 +91,10 @@
                         <img class="form-control" src="{{asset('storage/'.$product->image)}}" style="height: 150px; width: 150px;">
                     @endif
                    <input type="file" class="form-control" id="image" name="image" required>
-                 </div>
+                   @error('image')
+                       <p style="color: red">{{$message}}</p>
+                   @enderror
+                  </div>
             </div>
 
             <div class="d-flex justify-content-center">
