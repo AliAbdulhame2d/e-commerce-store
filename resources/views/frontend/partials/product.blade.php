@@ -34,7 +34,12 @@
              </div>
           </div>
           @endforeach
-       </div>
+         
+            <div class="pt-3">
+            {!!$products->withQueryString()->links('pagination::bootstrap-5')!!}
+            </div>
+
+         </div>
        <div class="btn-box">
           <a href="">
           View All products
