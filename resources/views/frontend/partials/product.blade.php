@@ -35,7 +35,7 @@
           </div>
           @endforeach
          
-            <div class="pt-3">
+            <div class="pt-3 pb-3">
             {!!$products->withQueryString()->links('pagination::bootstrap-5')!!}
             </div>
 
