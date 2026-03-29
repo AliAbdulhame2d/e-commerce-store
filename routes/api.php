@@ -3,10 +3,12 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
+use App\Models\User;
 use App\Http\Controllers\API\AuthController;
 use App\Http\Controllers\API\ProductController;
 use App\Http\Controllers\API\CategoryController;
 
+//return User
 Route::get('/user', function (Request $request) {
     return $request->user();
 })->middleware('auth:sanctum');
