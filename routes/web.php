@@ -6,6 +6,7 @@ use App\Http\Controllers\ProductController;
 use App\Http\Controllers\CategoryController;
 
 Route::get('/', [HomeController::class, 'index']);
+//Route::get('products/search', [ProductController::class,'search']);
 
 Route::middleware([
     'auth:sanctum',
@@ -24,8 +25,6 @@ Route::middleware('auth')->group(function () {
     Route::resource('categories', CategoryController::class);
     
 });
-
-
 
 
 /*Route::post('/add_category', [AdminController::class,'add_category']);
