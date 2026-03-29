@@ -94,6 +94,7 @@ Dieses Projekt dient dazu:
 - Login & Authentifizierung
 - Produktübersicht
 - Produktdetailseiten
+- API
 
 
 ---
@@ -113,7 +114,7 @@ Das Projekt verwendet ein externes Shop Template, das in Laravel integrieren wir
 ---
 
 ##  Lernprozess
-Die Entwicklung erfolgt parallel zu einer YouTube Schulung zur Erstellung eines Laravel E-Commerce Systems.
+Die Entwicklung erfolgt parallel zu einer YouTube Schulung zur Erstellung eines Laravel E-Commerce Systems mit API.
 
 ---
 
