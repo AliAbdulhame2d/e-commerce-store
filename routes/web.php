@@ -6,7 +6,7 @@ use App\Http\Controllers\ProductController;
 use App\Http\Controllers\CategoryController;
 
 Route::get('/', [HomeController::class, 'index']);
-//Route::get('products/search', [ProductController::class,'search']);
+Route::get('/search', [HomeController::class,'search']);
 
 Route::middleware([
     'auth:sanctum',

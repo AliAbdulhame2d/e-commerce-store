@@ -28,4 +28,10 @@ class HomeController extends Controller
             $products = Product::paginate(3);
             return view('frontend.home', compact('products'));
     }
+
+    public function search(Request $request) {
+        $query = $request->input('search');
+        $products = Product::where('name', 'LIKE', "%{$query}%")->paginate(3);
+        return view('frontend.home', compact('products'));
+}
 }
