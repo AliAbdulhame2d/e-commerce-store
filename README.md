@@ -1,78 +1,115 @@
-# 🛒 Laravel 11 E-Commerce Store
+#  Laravel 11 E-Commerce System (Web + API)
 
-## 📌 Overview
+##  Projektübersicht
 
-This project is a modern **E-Commerce Web Application** built with Laravel 11.
-It includes a complete **Admin Dashboard**, **Frontend UI**, and a fully functional **RESTful API** secured with token-based authentication.
+Dieses Projekt ist eine vollständige E-Commerce Webanwendung, entwickelt mit Laravel 11.
+Es kombiniert eine klassische Webanwendung (Frontend + Admin Panel) mit einer modernen REST API.
 
-The project is designed as a **portfolio project** to demonstrate backend development skills using Laravel.
+Das Projekt dient als Portfolio-Projekt zur Demonstration von Backend-Entwicklung, API-Design und sauberer Software-Architektur.
 
 ---
 
-## 🖼️ Screenshots
+##  Screenshots
 
-### 🏠 Home Page
+###  Startseite
 
 ![Home](screenshots/home.png)
 
-### ⚙️ Admin Dashboard
+###  Admin Dashboard
 
-![Dashboard](screenshots/category.png)
+![Dashboard](screenshots/dashboard.png)
 
-### ➕ Add Product
+###  Produkt hinzufügen
 
 ![Add Product](screenshots/add_product.png)
 
-### 📦 Products
+###  Produktliste
 
 ![Products](screenshots/products.png)
 
-### ✏️ Edit Product
+###  Produkt bearbeiten
 
 ![Edit Product](screenshots/edit_product.png)
 
 ---
 
-## 🚀 Features
+##  Features
 
-### 🔐 Authentication (API)
+###  Authentication (API)
 
-* User registration & login
-* Token-based authentication using Laravel Sanctum
-* Secure API endpoints
+* Benutzerregistrierung & Login
+* Token-basierte Authentifizierung mit Laravel Sanctum
+* Geschützte API-Endpunkte (`auth:sanctum`)
+* Login / Logout mit Access Token
 
----
+###  Produktverwaltung
 
-### 🛍️ Products Management
-
-* Create, Read, Update, Delete (CRUD)
+* CRUD (Create, Read, Update, Delete)
 * Pagination
-* Search functionality
-* Category relationship
-* API Resource transformation
+* Search-Funktion
+* Beziehung zu Kategorien (Eloquent Relationships)
+* API Resource Transformation (strukturierte JSON Responses)
+* Validierung mit Form Requests (Store & Update getrennt)
+
+###  Kategorienverwaltung
+
+* CRUD Operationen
+* Verknüpfung mit Produkten
+* API Unterstützung
+
+###  Frontend (Blade)
+
+* Startseite
+* Produktübersicht
+* Admin Dashboard
+* Wiederverwendbare Layouts & Components
+* UX Verbesserungen (Alerts, Feedback, etc.)
 
 ---
 
-### 📂 Categories Management
+##  API Authentication (Sanctum)
 
-* CRUD operations
-* Linked with products
-* API support
+### Login
 
----
+POST /api/login
 
-### 🌐 Frontend (Blade)
-
-* Home page
-* Product listing
-* Admin dashboard
-* Reusable components & layouts
 
 ---
 
-## 🧱 Project Structure
+##  API Beispiele
 
-```plaintext id="fixedtree"
+### Alle Produkte
+
+GET /api/products
+
+### Suche
+
+GET /api/products?search=Herrnhemd
+
+### Pagination
+
+GET /api/products?page=2
+
+---
+
+##  API Endpoints
+
+POST   /api/login
+POST   /api/logout
+POST   /api/register
+
+GET    /api/products
+POST   /api/products
+PUT    /api/products/{id}
+DELETE /api/products/{id}
+
+GET    /api/categories
+
+---
+
+##  Projektstruktur
+
+```
 app/
 ├── Http/
 │   ├── Controllers/
@@ -88,9 +125,13 @@ app/
 │   │
 │   ├── Requests/
 │   │   ├── StoreProductRequest.php
+│   │   ├── UpdateProductRequest.php
 │   │   ├── StoreCategoryRequest.php
 │   │   └── API/
-│   │       └── StoreProductRequest.php
+|   |       ├── StoreProductRequest.php
+│   │       ├── UpdateProductRequest.php
+│   │       ├── StoreCategoryRequest.php
+│   │       └── UpdateCategoryRequest.php
 │   │
 │   ├── Resources/
 │   │   ├── ProductResource.php
@@ -110,59 +151,81 @@ routes/
 resources/
 └── views/
     ├── layouts/
+    │   ├── app.blade.php
+    │   └── admin.blade.php
+    │
     ├── admin/
+    │   ├── dashboard.blade.php
+    │   ├── products/
+    │   ├── categories/
+    │   └── partials/
+    │       ├── header.blade.php
+    │       ├── sidebar.blade.php
+    │       └── footer.blade.php
+    │
     ├── frontend/
+    │   ├── home.blade.php
+    │   └── partials/
+    │       ├── header.blade.php
+    │       ├── slider.blade.php
+    │       └── footer.blade.php
+    │
     └── components/
+        ├── alert.blade.php
+        └── auth-buttons.blade.php
+│
+database/
+├── migrations/
+└── seeders/
 ```
 
 ---
 
-## ⚙️ Technologies
+##  UI & Template
+
+Das Projekt basiert auf einem vorgefertigten E-Commerce Template,
+das vollständig in Laravel integriert und angepasst wurde.
+
+Der Fokus lag auf:
+
+* Backend-Logik
+* API-Entwicklung
+* Integration und Anpassung des Designs
+
+---
+
+##  Technologien
 
 * PHP 8.2
 * Laravel 11
 * MySQL
 * Blade Template Engine
+* HTML / CSS / JavaScript
 * Bootstrap / Tailwind
-* REST API (Sanctum)
+* Laravel Sanctum (API Authentication)
 * Git & GitHub
 
 ---
 
-## 🔌 API Endpoints (Examples)
+##  Ziel des Projekts
 
-```http id="endpoints"
-POST   /api/login
-POST   /api/register
-
-GET    /api/products
-POST   /api/products
-PUT    /api/products/{id}
-DELETE /api/products/{id}
-
-GET    /api/categories
-```
+* Vertiefung von Laravel & Backend-Entwicklung
+* Entwicklung einer realistischen E-Commerce Anwendung
+* Aufbau einer strukturierten REST API
+* Anwendung von Best Practices (Validation, Architecture, Security)
+* Erstellung eines Portfolio-Projekts für Arbeitgeber
 
 ---
 
-## 🎯 Project Goals
+##  Projektstatus
 
-* Practice Laravel backend development
-* Build a real-world E-Commerce system
-* Implement RESTful API with authentication
-* Create a strong portfolio project for job applications
+Funktionsfähig & bereit zur Demonstration
+Weitere Erweiterungen möglich (Orders, Payment, etc.)
 
 ---
 
-## 📈 Project Status
+##  Autor
 
-🚧 In Progress
-New features are continuously being added.
-
----
-
-## 👨‍💻 Author
-
-**Ali Abdulhameed**
+Ali Abdulhameed
 Backend Developer (Laravel)
 2026
