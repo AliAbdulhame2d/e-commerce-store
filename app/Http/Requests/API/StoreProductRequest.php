@@ -21,13 +21,25 @@ class StoreProductRequest extends FormRequest
      */
     public function rules(): array
     {
+        if($this->isMethod('post')) {
+            return [
+                'name' => 'required|string|max:255',
+                'price' => 'required|numeric|min:0',
+                'discount' => 'nullable|numeric|min:0',
+                'quantity' => 'required|numeric|min:0',
+                'category_id' => 'required|exists:categories,id',
+                'description' => 'required|string',
+                'image' => 'nullable|image|mimes:jpg,jpeg,png|max:2048',
+            ];
+        }
+
         return [
-            'name' => 'required|string|max:255',
-            'price' => 'required|numeric|min:0',
+            'name' => 'sometimes|string|max:255',
+            'price' => 'sometimes|numeric|min:0',
             'discount' => 'nullable|numeric|min:0',
-            'quantity' => 'required|numeric|min:0',
-            'category_id' => 'required|exists:categories,id',
-            'description' => 'required|string',
+            'quantity' => 'sometimes|numeric|min:0',
+            'category_id' => 'sometimes|exists:categories,id',
+            'description' => 'sometimes|string',
             'image' => 'nullable|image|mimes:jpg,jpeg,png|max:2048',
         ];
     }
