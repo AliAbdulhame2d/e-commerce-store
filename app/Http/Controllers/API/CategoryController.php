@@ -22,6 +22,12 @@ class CategoryController extends Controller
     return new CategoryResource($category);
   }
 
+  public function update(StoreCategoryRequest $request, Category $category) {
+    $data = $request->validated();
+    $category->update($data);
+    return new CategoryResource($category);
+  }
+
   public function destroy(Category $category) {
     $category->delete();
     return response()->json(["message" => "Category deleted Successfully"]);

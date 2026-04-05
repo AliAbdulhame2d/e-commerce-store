@@ -21,8 +21,14 @@ class StoreCategoryRequest extends FormRequest
      */
     public function rules(): array
     {
-        return [
-           'name'=>'required|string|max:255|unique:categories,name',
-        ];
+        if($this->isMethod('post')) {
+            return [//categories ist Table in Datenbank und name ist Column
+                'name'=>'required|string|max:255|unique:categories,name',
+            ];
+            }
+    
+            return [
+                'name'=>'sometimes|string|max:255|unique:categories,name',
+            ];
     }
 }

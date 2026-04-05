@@ -3,7 +3,7 @@
 namespace App\Http\Controllers\API;
 
 use App\Http\Controllers\Controller;
-use Illuminate\Http\Requestes\API\StoreProductRequest;
+use App\Http\Requests\API\StoreProductRequest;
 use Illuminate\Http\Request;
 
 use App\Models\Product;
@@ -34,9 +34,8 @@ class ProductController extends Controller
         return new ProductResource($product);
     }
 
-    public function update(StoreProductRequest $request) {
+    public function update(StoreProductRequest $request, Product $product) {
         $data = $request->validated();
-        $product = Product::findOrFail($id);
         $product->update($data);
         return new ProductResource($product);
     }
