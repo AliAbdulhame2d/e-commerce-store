@@ -1,131 +1,168 @@
+# 🛒 Laravel 11 E-Commerce Store
 
-#  Laravel v.11 E-Commerce Store
+## 📌 Overview
 
+This project is a modern **E-Commerce Web Application** built with Laravel 11.
+It includes a complete **Admin Dashboard**, **Frontend UI**, and a fully functional **RESTful API** secured with token-based authentication.
 
-##  Projektübersicht
-Dieses Projekt ist eine webbasierte E-Commerce-Anwendung 
-
-
-##  Projektbeschreibung
-Dieses Projekt ist eine moderne **E-Commerce Webanwendung**, die mit **Laravel 11** entwickelt wird.
-
-Das Projekt basiert auf einem vorgefertigten Online-Shop Template mit Benutzeroberfläche und Admin Dashboard.  
-Die Anwendung befindet sich aktuell in der Entwicklungsphase.
+The project is designed as a **portfolio project** to demonstrate backend development skills using Laravel.
 
 ---
 
-### Startseite
-![Startseite](screenshots/home.png)
+## 🖼️ Screenshots
 
-### Admin Dashboard
-![Admin Dashboard](screenshots/category.png)
+### 🏠 Home Page
 
-### Add Produkt
-![Add Produkt](screenshots/add_product.png)
+![Home](screenshots/home.png)
 
-### Produkte
-![Produkte](screenshots/products.png)
+### ⚙️ Admin Dashboard
 
-### Edit Produkt
-![Edit Produkt](screenshots/edit_product.png)
+![Dashboard](screenshots/category.png)
 
+### ➕ Add Product
+
+![Add Product](screenshots/add_product.png)
+
+### 📦 Products
+
+![Products](screenshots/products.png)
+
+### ✏️ Edit Product
+
+![Edit Product](screenshots/edit_product.png)
 
 ---
 
+## 🚀 Features
 
-## Project Structure
+### 🔐 Authentication (API)
 
+* User registration & login
+* Token-based authentication using Laravel Sanctum
+* Secure API endpoints
+
+---
+
+### 🛍️ Products Management
+
+* Create, Read, Update, Delete (CRUD)
+* Pagination
+* Search functionality
+* Category relationship
+* API Resource transformation
+
+---
+
+### 📂 Categories Management
+
+* CRUD operations
+* Linked with products
+* API support
+
+---
+
+### 🌐 Frontend (Blade)
+
+* Home page
+* Product listing
+* Admin dashboard
+* Reusable components & layouts
+
+---
+
+## 🧱 Project Structure
+
+```plaintext id="fixedtree"
+app/
+├── Http/
+│   ├── Controllers/
+│   │   ├── API/
+│   │   │   ├── AuthController.php
+│   │   │   ├── ProductController.php
+│   │   │   └── CategoryController.php
+│   │   │
+│   │   └── Web/
+│   │       ├── ProductController.php
+│   │       ├── CategoryController.php
+│   │       └── HomeController.php
+│   │
+│   ├── Requests/
+│   │   ├── StoreProductRequest.php
+│   │   ├── StoreCategoryRequest.php
+│   │   └── API/
+│   │       └── StoreProductRequest.php
+│   │
+│   ├── Resources/
+│   │   ├── ProductResource.php
+│   │   └── CategoryResource.php
+│   │
+│   └── Middleware/
+│
+├── Models/
+│   ├── Product.php
+│   ├── Category.php
+│   └── User.php
+│
+routes/
+├── web.php
+└── api.php
+│
+resources/
+└── views/
+    ├── layouts/
+    ├── admin/
+    ├── frontend/
+    └── components/
 ```
-resources/views/
-│
-├── layouts/
-│   ├── app.blade.php
-│   └── admin.blade.php
-│
-├── admin/
-│   ├── dashboard.blade.php
-│   ├── products/
-│   ├── categories/
-│   └── partials/
-│       ├── header.blade.php
-│       ├── sidebar.blade.php
-│       └── footer.blade.php
-│
-├── frontend/
-│   ├── home.blade.php
-│   └── partials/
-│       ├── header.blade.php
-│       ├── slider.blade.php
-│       └── footer.blade.php
-│
-└── components/
-    ├── alert.blade.php
-    └── auth-buttons.blade.php
+
+---
+
+## ⚙️ Technologies
+
+* PHP 8.2
+* Laravel 11
+* MySQL
+* Blade Template Engine
+* Bootstrap / Tailwind
+* REST API (Sanctum)
+* Git & GitHub
+
+---
+
+## 🔌 API Endpoints (Examples)
+
+```http id="endpoints"
+POST   /api/login
+POST   /api/register
+
+GET    /api/products
+POST   /api/products
+PUT    /api/products/{id}
+DELETE /api/products/{id}
+
+GET    /api/categories
 ```
 
-
----
-##  Ziel des Projekts
-Dieses Projekt dient dazu:
-
-- Laravel Kenntnisse zu vertiefen
-- Eine reale E-Commerce Anwendung zu entwickeln
-- Professionelle Entwicklungsprozesse zu demonstrieren
-- Ein Portfolio Projekt für Arbeitgeber zu erstellen
-
 ---
 
-##  Technologien
+## 🎯 Project Goals
 
-- Laravel 11
-- PHP 8.2
-- MySQL
-- Blade Template Engine
-- HTML / CSS / JavaScript
-- Bootstrap / Tailwind
-- Git & GitHub
+* Practice Laravel backend development
+* Build a real-world E-Commerce system
+* Implement RESTful API with authentication
+* Create a strong portfolio project for job applications
 
 ---
 
-##  Funktionen
+## 📈 Project Status
 
-###  Benutzerbereich
-- Registrierung
-- Login & Authentifizierung
-- Produktübersicht
-- Produktdetailseiten
-- API
-
+🚧 In Progress
+New features are continuously being added.
 
 ---
 
-###  Admin Bereich
-- Admin Login
-- Produktverwaltung
-- Kategorienverwaltung
-- Bestellverwaltung (geplant)
-- Benutzerverwaltung (geplant)
+## 👨‍💻 Author
 
----
-
-##  Template Integration
-Das Projekt verwendet ein externes Shop Template, das in Laravel integrieren wird.
-
----
-
-##  Lernprozess
-Die Entwicklung erfolgt parallel zu einer YouTube Schulung zur Erstellung eines Laravel E-Commerce Systems mit API.
-
----
-
-##  Projektstatus
- Projekt in Entwicklung
-
-Neue Funktionen werden regelmäßig hinzugefügt.
-
----
-
-##  Autor
-Ali Abdulhameed / Feb.2026
-
----
+**Ali Abdulhameed**
+Backend Developer (Laravel)
+2026
