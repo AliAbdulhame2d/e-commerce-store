@@ -95,13 +95,20 @@ GET /api/products?page=2
 ##  API Endpoints
 
 POST   /api/login
+
 POST   /api/logout
+
 POST   /api/register
 
+
 GET    /api/products
+
 POST   /api/products
+
 PUT    /api/products/{id}
+
 DELETE /api/products/{id}
+
 
 GET    /api/categories
 
