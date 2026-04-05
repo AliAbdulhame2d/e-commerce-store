@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\Auth;
 use App\Models\Category;
 use App\Models\Product;
 use App\Http\Requests\StoreProductRequest;
+use App\Http\Requests\UpdateProductRequest;
 
 class ProductController extends Controller
 {  
@@ -30,7 +31,7 @@ class ProductController extends Controller
     return redirect()->back()->with('success', 'Product Added Successfully');    
     }
 
-    public function update(StoreProductRequest $request, $id) { 
+    public function update(UpdateProductRequest $request, $id) { 
         
         $data = $request->validated();
         $product = Product::findOrFail($id);

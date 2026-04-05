@@ -4,6 +4,7 @@ namespace App\Http\Controllers\API;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\API\StoreProductRequest;
+use App\Http\Requests\API\UpdateProductRequest;
 use Illuminate\Http\Request;
 
 use App\Models\Product;
@@ -23,7 +24,7 @@ class ProductController extends Controller
         if($request->sort) {
             $query->orderBy('price', $request->sort);
         }
-        $products = $query->paginate(10);
+        $products = $query->paginate(3);
         // return response()->json($products);
         return ProductResource::collection($products);
     }
@@ -34,7 +35,7 @@ class ProductController extends Controller
         return new ProductResource($product);
     }
 
-    public function update(StoreProductRequest $request, Product $product) {
+    public function update(UpdateProductRequest $request, Product $product) {
         $data = $request->validated();
         $product->update($data);
         return new ProductResource($product);

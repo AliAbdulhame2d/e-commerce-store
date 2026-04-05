@@ -4,7 +4,7 @@ namespace App\Http\Requests\API;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class StoreCategoryRequest extends FormRequest
+class UpdateCategoryRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -21,8 +21,8 @@ class StoreCategoryRequest extends FormRequest
      */
     public function rules(): array
     {
-            return [//categories ist Table in Datenbank und name ist Column
-                'name'=>'required|string|max:255|unique:categories,name',
-            ];  
+        return [
+            'name'=>'sometimes|string|max:255|unique:categories,name',
+        ];
     }
 }

@@ -8,6 +8,7 @@ use Illuminate\Http\Request;
 use App\Models\Category;
 use App\Http\Resources\CategoryResource;
 use App\Http\Requests\API\StoreCategoryRequest;
+use App\Http\Requests\API\UpdateCategoryRequest;
 
 class CategoryController extends Controller
 {
@@ -22,7 +23,7 @@ class CategoryController extends Controller
     return new CategoryResource($category);
   }
 
-  public function update(StoreCategoryRequest $request, Category $category) {
+  public function update(UpdateCategoryRequest $request, Category $category) {
     $data = $request->validated();
     $category->update($data);
     return new CategoryResource($category);
