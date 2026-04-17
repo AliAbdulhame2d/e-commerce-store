@@ -11,6 +11,10 @@ Das Projekt dient als Portfolio-Projekt zur Demonstration von Backend-Entwicklun
 
 ##  Screenshots
 
+###  Login-Web
+
+![Login](screenshots/login.png)
+
 ###  Startseite
 
 ![Home](screenshots/home.png)
@@ -30,6 +34,21 @@ Das Projekt dient als Portfolio-Projekt zur Demonstration von Backend-Entwicklun
 ###  Produkt bearbeiten
 
 ![Edit Product](screenshots/edit_product.png)
+
+
+###  Login-API
+
+![Login](screenshots/login-API.png)
+
+
+###  Produkt hinzufügen-API
+
+![Add Product](screenshots/creat-api.png)
+
+
+###  Search-API
+
+![Search](screenshots/search-api.png)
 
 ---
 
