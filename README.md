@@ -38,7 +38,7 @@ Das Projekt dient als Portfolio-Projekt zur Demonstration von Backend-Entwicklun
 
 ###  Login-API
 
-![Login](screenshots/login-API.png)
+![Login](screenshots/login-api.png)
 
 
 ###  Produkt hinzufügen-API
